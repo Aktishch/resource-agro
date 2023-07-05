@@ -12,7 +12,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '--btn-accent': theme('colors.white.DEFAULT'),
       color: 'var(--btn-color)',
       fontSize: theme('fontSize.16'),
-      fontWeight: 600,
+      fontWeight: 500,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -21,7 +21,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       transition: '0.2s ease',
       cursor: 'pointer',
 
-      '&:focus': {
+      '&:focus-visible': {
         boxShadow: '0 0 0 4px var(--btn-focus)',
         backgroundColor: 'var(--btn-fade)',
       },
@@ -50,7 +50,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         color: 'var(--btn-accent)',
         backgroundColor: 'var(--btn-color)',
 
-        '&:focus': {
+        '&:focus-visible': {
           backgroundColor: 'var(--btn-dark)',
         },
 
@@ -65,7 +65,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         color: 'var(--btn-color)',
         backgroundColor: 'var(--btn-fade)',
 
-        '&:focus': {
+        '&:focus-visible': {
           color: 'var(--btn-accent)',
           backgroundColor: 'var(--btn-color)',
         },
@@ -83,7 +83,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         backgroundColor: 'var(--btn-accent)',
         border: '2px solid transparent',
 
-        '&:focus': {
+        '&:focus-visible': {
           backgroundColor: 'var(--btn-accent)',
           borderColor: 'var(--btn-color)',
         },
@@ -98,6 +98,12 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
       '&-contur': {
         border: '2px solid var(--btn-color)',
+      },
+
+      '&-gradient': {
+        backgroundImage:
+          'radial-gradient(100.00% 100.00% at 50.00% -0.00%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 73.05%), radial-gradient(537.14% 76.94% at 30.65% 40.18%, rgba(255, 121, 0, 0.33) 0%, rgba(153, 153, 153, 0.00) 100%)',
+        borderBottom: '2px solid var(--btn-dark)',
       },
     },
   })
@@ -127,7 +133,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     {
       btn: (size) => {
         return {
-          borderRadius: '6px',
+          borderRadius: '100px',
           height: size,
           paddingInline: `calc(${size} / 2)`,
         }
