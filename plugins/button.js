@@ -81,7 +81,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '&-light': {
         color: 'var(--btn-color)',
         backgroundColor: 'var(--btn-accent)',
-        border: '2px solid transparent',
+        border: '1px solid transparent',
 
         '&:focus-visible': {
           backgroundColor: 'var(--btn-accent)',
@@ -97,7 +97,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '&-contur': {
-        border: '2px solid var(--btn-color)',
+        border: '1px solid var(--btn-color)',
       },
 
       '&-gradient': {

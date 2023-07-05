@@ -57,24 +57,41 @@
 
   <nav class="container hidden xl:flex items-center justify-between gap-5 sticky z-4 top-0 left-0 right-0 bg-white py-4">
     <% for (var i = 0; i < nav.length; i++) { %>
-    <a class="btn btn-gray font-normal text-black text-opacity-60" data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
+    <a class="btn btn-gray font-normal text-black text-opacity-60" data-scroll data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
     <% } %>
   </nav>
 
+  <!-- Мобильная шапка -->
+
+  <header class="header container flex xl:hidden items-center justify-between gap-3 sticky z-3 top-0 left-0 right-0 bg-white py-2 duration-3" data-header>
+    <button class="btn btn-gray" data-sidebar-open="menu" data-waved="dark">
+      <svg class="icon text-black text-24 mr-2">
+        <use xlink:href="img/icons.svg#burger">
+      </svg>
+      <span class="font-normal text-black text-opacity-60 text-14">Меню</span>
+    </button>
+    <button class="btn btn-gray" data-sidebar-open="series" data-waved="dark">
+      <svg class="icon text-black text-24 mr-2">
+        <use xlink:href="img/icons.svg#dots">
+      </svg>
+      <span class="font-normal text-black text-opacity-60 text-14">Каталог</span>
+    </button>
+  </header>
+
   <!-- Шапка документа -->
 
-  <header class="header container flex items-center justify-between gap-5 sticky xl:static z-3 top-0 left-0 right-0 bg-white py-4 duration-3" data-header>
+  <header class="container flex items-center justify-between gap-3 py-4">
     <a class="btn btn-gray" data-waved="dark" href="/">
       <picture>
         <source srcset="img/pictures/logo.webp" type="image/webp">
-        <img class="w-[88px]" src="img/pictures/logo.png" alt="">
+        <img class="w-10 md:w-16 lg:w-[88px]" src="img/pictures/logo.png" alt="">
       </picture>
-      <div class="flex flex-col ml-4">
-        <span class="font-alt font-bold text-black text-20 leading-1 mb-2">РесурсАгроСтрой</span>
-        <span class="font-normal text-black text-opacity-60 text-12 leading-1">Производитель почвообрабатывающей техники</span>
+      <div class="flex flex-col ml-3 md:ml-4">
+        <span class="font-alt font-bold text-black text-14 md:text-20 leading-1">РесурсАгроСтрой</span>
+        <span class="hidden md:block font-normal text-black text-opacity-60 text-12 leading-1 mt-2">Производитель почвообрабатывающей техники</span>
       </div>
     </a>
-    <div class="flex items-center gap-14">
+    <div class="hidden lg:flex items-center gap-14">
       <div class="flex items-center">
         <div class="flex items-center justify-center bg-black bg-opacity-20 rounded-4 w-10 h-10 mr-4">
           <svg class="icon text-white text-18 drop-shadow-md">
@@ -98,95 +115,122 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary btn-lg btn-contur btn-swipe text-black" data-waved="dark">Консультация специалиста</button>
+    <button class="btn btn-primary btn-lg btn-contur btn-swipe hidden xl:flex text-black" data-waved="dark">Консультация специалиста</button>
+    <div class="flex lg:hidden flex-col items-end">
+      <a class="btn btn-gray font-alt font-semibold text-black text-14 md:text-16 leading-1" data-waved="dark" href="tel: 8 800 100 45 92">8 800 100 45 92</a>
+      <button class="btn btn-gray font-normal text-black text-opacity-60 text-12 md:text-14 leading-1 border-b border-dashed border-black border-opacity-80 pb-0.5" data-waved="dark">Консультация</button>
+    </div>
   </header>
-
-  <section class="h-[4000px]"></section>
-
-  <!-- <header class="header container flex items-center justify-between gap-5 fixed z-3 top-0 left-0 right-0 bg-black py-4 duration-3" data-header>
-    <a class="btn btn-white w-36" data-waved="light" href="/">
-      <picture>
-        <source srcset="img/pictures/logo.webp" type="image/webp">
-        <img class="w-full" src="img/pictures/logo.png" alt="">
-      </picture>
-    </a>
-    <nav class="nav hidden lg:flex items-center justify-between gap-4 w-full max-w-[800px] ml-auto">
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="index.html">Front-page</a>
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="primary.html">Primary-page</a>
-      <a class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-waved="light" href="second.html">Second-page</a>
-      <div class="nav__accordion relative" data-accordion="hidden" data-accordion-close="scroll">
-        <button class="btn btn-second hover:underline underline-offset-4 text-14 font-normal uppercase p-1" data-accordion-toggle data-waved="light">
-          Navigation
-          <svg class="nav__arrow icon text-12 ml-2 ease-linear duration-3">
-            <use xlink:href="img/icons.svg#arrow-right">
-          </svg>
-        </button>
-        <div class="nav__items absolute top-16 right-0 bg-white rounded-2 shadow-md w-full" data-accordion-content>
-          <div class="flex flex-col gap-4 p-4">
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#header">Header</a>
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#player">Player</a>
-            <a class="btn btn-gray hover:underline underline-offset-4 text-14" data-waved="dark" data-scroll="top" href="#footer">Footer</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <button class="btn btn-second lg:hidden text-48" data-sidebar-open="menu" data-waved="light">
-      <svg class="icon">
-        <use xlink:href="img/icons.svg#burger">
-      </svg>
-    </button>
-  </header> -->
 
   <!-- Меню -->
 
-  <% var social = ['ok', 'yt', 'inst', 'tw', 'fb', 'vk'] %>
-
-  <!-- <div class="menu fixed inset-0 z-6 duration-1" data-sidebar="close" data-sidebar-resize="lg" id="menu">
-    <div class="menu__content flex flex-col bg-black bg-opacity-90 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
-      <div class="menu__head flex items-center justify-between gap-2 bg-black p-4 duration-5 delay-3">
-        <a class="btn btn-white w-36" data-waved="light" href="/">
+  <div class="menu fixed inset-0 z-6 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="menu">
+    <div class="menu__content flex flex-col bg-white overflow-auto w-full max-w-[375px] h-full py-4 px-4 pb-6 duration-3">
+      <div class="flex items-center justify-between gap-1 mb-12">
+        <a class="btn btn-gray" data-waved="dark" href="/">
           <picture>
             <source srcset="img/pictures/logo.webp" type="image/webp">
-            <img class="w-full" src="img/pictures/logo.png" alt="">
+            <img class="w-11" src="img/pictures/logo.png" alt="">
           </picture>
+          <div class="flex flex-col ml-3">
+            <span class="font-alt font-bold text-black text-14 leading-1">РесурсАгроСтрой</span>
+            <span class="font-normal text-black text-opacity-60 text-8 leading-1 mt-1">Производитель почвообрабатывающей техники</span>
+          </div>
         </a>
-        <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-        <button class="btn btn-second text-white text-24 p-1" data-sidebar-close="menu" data-waved="light">
+        <button class="btn btn-gray text-black text-opacity-40 text-20 p-1" data-sidebar-close="menu" data-waved="dark">
           <svg class="icon">
             <use xlink:href="img/icons.svg#close">
           </svg>
         </button>
       </div>
-      <div class="menu__nav flex flex-col items-start gap-4 text-white pt-4 pb-10 px-4 duration-9 delay-5">
-        <a class="hover:underline underline-offset-4 text-20" href="index.html">Front-page</a>
-        <a class="hover:underline underline-offset-4 text-20" href="primary.html">Primary</a>
-        <a class="hover:underline underline-offset-4 text-20" href="second.html">Second</a>
-        <div class="menu__accordion" data-accordion="hidden" data-accordion-close="click">
-          <button class="flex items-center hover:underline underline-offset-4 text-20" data-accordion-toggle>
-            Navigation
-            <svg class="menu__arrow icon text-14 opacity-60 ml-2 ease-linear duration-3">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </button>
-          <div data-accordion-content>
-            <div class="flex flex-col items-start gap-2 mt-2 pl-5">
-              <a class="hover:underline underline-offset-4 text-18" data-scroll="top" href="#header">Header</a>
-              <a class="hover:underline underline-offset-4 text-18" data-scroll="top" href="#player">Player</a>
-              <a class="hover:underline underline-offset-4 text-18" data-scroll="top" href="#header">Header</a>
+      <div class="flex flex-col items-start gap-10 mb-14">
+        <% for (var i = 0; i < nav.length; i++) { %>
+        <a class="btn btn-gray font-medium text-black text-14" data-scroll data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
+        <% } %>
+      </div>
+      <div class="mt-auto">
+        <div class="flex flex-col gap-6 mb-14">
+          <div class="flex items-center">
+            <div class="flex items-center justify-center bg-black bg-opacity-20 rounded-4 w-10 h-10 mr-4">
+              <svg class="icon text-white text-18 drop-shadow-md">
+                <use xlink:href="img/icons.svg#mobile">
+              </svg>
+            </div>
+            <div class="flex flex-col items-start">
+              <a class="btn btn-gray font-alt font-semibold text-black leading-1 mb-1" data-waved="dark" href="tel: 8 800 100 45 92">8 800 100 45 92</a>
+              <a class="btn btn-gray font-normal text-black text-opacity-60 text-12 leading-1" data-waved="dark" href="mailto: mail@resurs-agro.ru">mail@resurs-agro.ru</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center justify-center bg-black bg-opacity-20 rounded-4 w-10 h-10 mr-4">
+              <svg class="icon text-white text-18 drop-shadow-md">
+                <use xlink:href="img/icons.svg#geo">
+              </svg>
+            </div>
+            <div class="flex flex-col items-start">
+              <span class="font-alt font-semibold leading-1 mb-1">ст. Новотитаровская</span>
+              <span class="font-normal text-black text-opacity-60 text-12 leading-1">ул. Калинина, д. 12/1</span>
             </div>
           </div>
         </div>
-      </div>
-      <div class="menu__footer mt-auto px-4 pt-4 pb-10 duration-5 delay-9">
-        <div class="flex items-center justify-center gap-4">
-          <% for (var i = 0; i < social.length; i++) { %>
-          <button class="btn btn-second text-30 rounded-max" data-waved="dark">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#<%= social[i] %>">
-            </svg>
-          </button>
-          <% } %>
-        </div>
+        <button class="btn btn-primary btn-lg btn-contur btn-swipe text-black w-full" data-waved="dark">Консультация специалиста</button>
       </div>
     </div>
-  </div> -->
+  </div>
+
+  <!-- Серии -->
+
+  <div class="menu fixed inset-0 z-6 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="series">
+    <div class="menu__content flex flex-col bg-white overflow-auto w-full max-w-[375px] h-full py-4 px-4 pb-6 duration-3">
+      <div class="flex items-center justify-between gap-1 mb-12">
+        <a class="btn btn-gray" data-waved="dark" href="/">
+          <picture>
+            <source srcset="img/pictures/logo.webp" type="image/webp">
+            <img class="w-11" src="img/pictures/logo.png" alt="">
+          </picture>
+          <div class="flex flex-col ml-3">
+            <span class="font-alt font-bold text-black text-14 leading-1">РесурсАгроСтрой</span>
+            <span class="font-normal text-black text-opacity-60 text-8 leading-1 mt-1">Производитель почвообрабатывающей техники</span>
+          </div>
+        </a>
+        <button class="btn btn-gray text-black text-opacity-40 text-20 p-1" data-sidebar-close="series" data-waved="dark">
+          <svg class="icon">
+            <use xlink:href="img/icons.svg#close">
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-9">
+        <% for (var i = 0; i < 4; i++) { %>
+        <div class="flex flex-col gap-5">
+          <h3 class="font-semibold text-16 leading-1">Серия КРОНОС</h3>
+          <div class="flex items-stretch">
+            <div class="pack pack-rect-sm bg-grey rounded-4 w-full max-w-[115px] h-full mr-4">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/series.webp" type="image/webp">
+                <img class="image" loading="lazy" src="img/pictures/series.jpg" alt="">
+              </picture>
+            </div>
+            <div class="flex flex-col items-start gap-3 text-14 leading-2">
+              <div class="flex flex-col">
+                <span class="font-semibold">Рабочая скорость:</span>
+                <span class="font-normal">до 16 км/ч</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-semibold">Ширина захвата:</span>
+                <span class="font-normal">от 2,5 до 8,2 м.</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-contur btn-swipe text-black" data-waved="dark">Подробнее</button>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>

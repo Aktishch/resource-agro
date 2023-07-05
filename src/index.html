@@ -9,4 +9,27 @@
 
 <!-- Главный блок -->
 
+<main class="main container flex items-center relative overflow-hidden min-h-[775px]">
+  <div class="absolute inset-0">
+    <div class="pack bg-grey h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <video class="image" autoplay loop muted src="media/main.mp4" poster="img/pictures/poster.jpg"></video>
+    </div>
+  </div>
+  <div class="flex flex-col relative z-1 text-white">
+    <div class="flex items-center mb-16">
+      <img class="icon text-32 mr-2" src="img/pictures/check.svg" alt="">
+      <h3 class="font-alt font-semibold text-18 leading-2">
+        <span class="text-primary">Качество,</span> проверенное временем
+      </h3>
+    </div>
+  </div>
+</main>
+
 <%= require('./includes/footer.html').default %>

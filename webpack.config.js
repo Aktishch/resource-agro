@@ -76,6 +76,11 @@ module.exports = {
           to: 'img/',
         },
 
+        {
+          from: './src/media/',
+          to: './media/',
+        },
+
         ...generatePlugins('src/dialogs'),
       ],
     }),

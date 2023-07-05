@@ -6,9 +6,9 @@
 // import smoothScroll from './ts/smooth-scroll'
 import scrollHeader from './ts/scroll-header'
 // import currentTab from './ts/current-tab'
-// import sidebar from './ts/sidebar'
+import sidebar from './ts/sidebar'
 // import progressLine from './ts/progress-line'
-// import scrollTo from './ts/scroll-to'
+import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
 // import social from './ts/social'
 // import draggable from './ts/draggable'
@@ -60,9 +60,9 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   // currentTab.init()
   // smoothScroll.init()
   scrollHeader.init()
-  // sidebar.init()
+  sidebar.init()
   // progressLine.init()
-  // scrollTo.init()
+  scrollTo.init()
   // smartMenu.init()
   // social.init()
   // draggable.init()
