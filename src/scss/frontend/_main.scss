@@ -33,9 +33,53 @@
 // Главный блок
 .main {
   &::before {
-    background-image: linear-gradient(180deg, rgba(28, 28, 28, 0.4) 0%, #000 100%);
-
+    background: linear-gradient(180deg, rgba(28, 28, 28, 0) 27.43%, #000 44.35%);
 
     @apply content-auto absolute z-1 inset-0;
+
+    @screen sm {
+      background-image: linear-gradient(180deg, rgba(28, 28, 28, 0.4) 0%, #000 100%);
+    }
+  }
+}
+
+// Серии
+.series {
+  &__item {
+
+    @media (hover) {
+      &:hover {
+        & .series__link {
+          @apply bg-white font-semibold text-black border-gray border-opacity-100;
+        }
+
+        & .series__content {
+          @apply visible opacity-100;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      @apply border-r border-solid border-white border-opacity-20;
+    }
+  }
+}
+
+// Каталог
+.catalog {
+  &__accordion[data-accordion="hidden"] &__text {
+    & span:last-child {
+      @apply hidden;
+    }
+  }
+
+  &__accordion[data-accordion="active"] &__arrow {
+    transform: rotate(-90deg);
+  }
+
+  &__accordion[data-accordion="active"] &__text {
+    & span:first-child {
+      @apply hidden;
+    }
   }
 }

@@ -1,6 +1,4 @@
 import { Fancybox } from '@fancyapps/ui'
-import airDatepicker from './air-datepicker'
-import filter from './filter'
 import waved from './waved'
 
 declare global {
@@ -24,18 +22,6 @@ const init = (): void => {
 
     on: {
       done: (): void => {
-        waved.init()
-      },
-    },
-  })
-
-  window.Fancybox.bind('[data-fancybox-calendar]', {
-    dragToClose: false,
-
-    on: {
-      done: (): void => {
-        airDatepicker.init()
-        filter.init()
         waved.init()
       },
     },

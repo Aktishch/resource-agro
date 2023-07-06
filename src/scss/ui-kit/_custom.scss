@@ -35,6 +35,10 @@
       &::after {
         @apply hidden;
       }
+
+      &.swiper-button-disabled {
+        @apply invisible opacity-0;
+      }
     }
   }
 }

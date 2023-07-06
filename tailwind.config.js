@@ -17,7 +17,7 @@ module.exports = {
       sm: 575.98 + 'px',
       md: 767.98 + 'px',
       lg: 991.98 + 'px',
-      xl: 1299.98 + 'px',
+      xl: 1349.98 + 'px',
       xxl: 1999.98 + 'px',
     },
 
@@ -203,7 +203,7 @@ module.exports = {
       md: '46px',
       lg: '52px',
       xl: '60px',
-      xxl: '64px',
+      xxl: '66px',
     },
   },
 

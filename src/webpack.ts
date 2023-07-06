@@ -1,6 +1,6 @@
 // Scripts
-// import fancybox from './ts/fancybox'
-// import sliderSwiper from './ts/slider-swiper'
+import fancybox from './ts/fancybox'
+import sliderSwiper from './ts/slider-swiper'
 // import yandexMap from './ts/yandex-map'
 // import airDatepicker from './ts/air-datepicker'
 // import smoothScroll from './ts/smooth-scroll'
@@ -20,7 +20,7 @@ import waved from './ts/waved'
 // import bubbles from './ts/bubbles'
 // import inverted from './ts/inverted'
 // import listing from './ts/listing'
-// import accordion from './ts/accordion'
+import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 // import parallax from './ts/parallax'
 // import filter from './ts/filter'
@@ -53,8 +53,8 @@ import './scss/index.scss'
 
 // Connection
 window.addEventListener('DOMContentLoaded', ((): void => {
-  // fancybox.init()
-  // sliderSwiper.init()
+  fancybox.init()
+  sliderSwiper.init()
   // yandexMap.init()
   // airDatepicker.init()
   // currentTab.init()
@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   // bubbles.init()
   // inverted.init()
   // listing.init()
-  // accordion.init()
+  accordion.init()
   // formatBg.init()
   // parallax.init()
   // filter.init()

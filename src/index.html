@@ -9,9 +9,9 @@
 
 <!-- Главный блок -->
 
-<main class="main container flex items-center relative overflow-hidden min-h-[775px]">
-  <div class="absolute inset-0">
-    <div class="pack bg-grey h-full">
+<main class="main container flex items-end sm:items-center xl:items-end relative overflow-hidden min-h-[570px] xl:min-h-[775px] pb-8 xl:pb-36">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="pack pack-box bg-grey sm:h-full">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -22,14 +22,380 @@
       <video class="image" autoplay loop muted src="media/main.mp4" poster="img/pictures/poster.jpg"></video>
     </div>
   </div>
+  <div class="series container hidden xl:block absolute z-2 top-0 left-0 right-0 py-0">
+    <div class="grid grid-cols-4 border-x border-solid border-white border-opacity-20">
+      <% for (var i = 0; i < 4; i++) { %>
+      <div class="series__item relative">
+        <div class="series__link flex items-center justify-center font-medium text-white text-16 border-b border-solid border-white border-opacity-20 cursor-pointer w-full h-16 duration-1">Серия КРОНОС</div>
+        <div class="series__content absolute top-full left-0 right-0 bg-white invisible opacity-0 pt-4 pb-8 px-4 duration-1">
+          <div class="pack pack-rect-sm bg-grey rounded-4 mb-6">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/series.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/series.jpg" alt="">
+            </picture>
+          </div>
+          <div class="flex flex-col items-start gap-3 text-12 leading-2 mb-8">
+            <div class="flex flex-col">
+              <span class="font-semibold">Рабочая скорость:</span>
+              <span class="font-normal">до 16 км/ч</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold">Ширина захвата:</span>
+              <span class="font-normal">от 2,5 до 8,2 м.</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold">Расстояние между рабочими органами:</span>
+              <span class="font-normal">250 мм</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-semibold">Расстояние между рядами:</span>
+              <span class="font-normal">1000 мм</span>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-contur btn-swipe text-black w-full" data-waved="dark">Подробнее</button>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="sm:hidden absolute z-1 -bottom-20 left-0 right-0 bg-primary bg-opacity-20 blur-2xl pointer-events-none w-56 h-56 mx-auto"></div>
   <div class="flex flex-col relative z-1 text-white">
-    <div class="flex items-center mb-16">
-      <img class="icon text-32 mr-2" src="img/pictures/check.svg" alt="">
-      <h3 class="font-alt font-semibold text-18 leading-2">
+    <div class="flex items-center mb-6 sm:mb-9 xl:mb-16">
+      <img class="icon text-26 lg:text-32 mr-2" src="img/pictures/check.svg" alt="">
+      <h3 class="font-alt font-semibold text-14 sm:text-16 lg:text-18 leading-2">
         <span class="text-primary">Качество,</span> проверенное временем
       </h3>
     </div>
+    <h1 class="font-alt font-semibold uppercase text-26 sm:text-36 lg:text-46 leading-5 mb-4 sm:mb-6 xl:mb-11">Лущильники дисковые <br class="hidden sm:block"> от производителя</h1>
+    <p class="font-normal text-14 sm:text-16 leading-5 mb-10 xl:mb-20">
+      Для комплексной предпосевной подготовки почвы купить <br class="hidden sm:block"> лущильник – это выгодное решение
+    </p>
+    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+      <button class="btn btn-primary btn-lg btn-fill btn-gradient text-14 sm:text-16 sm:px-14 w-full sm:w-auto" data-waved="dark">Консультация</button>
+      <button class="btn btn-white btn-lg btn-contur text-14 sm:text-16 sm:px-9 w-full sm:w-auto" data-waved="dark">
+        <svg class="icon text-primary text-24 mr-1 sm:mr-2">
+          <use xlink:href="img/icons.svg#play-circle">
+        </svg>
+        Смотреть видео
+      </button>
+    </div>
   </div>
 </main>
+
+<!-- Каталог -->
+
+<% var specifications = [
+  {
+    icon: 'img/icons.svg#spedometer',
+    title: 'Рабочая скорость:',
+    text: 'до 16 км/ч'
+  },
+  {
+    icon: 'img/icons.svg#max-min',
+    title: 'Ширина захвата:',
+    text: 'от 2,5 до 8,2 м.'
+  },
+  {
+    icon: 'img/icons.svg#sort',
+    title: 'Расстояние между рабочими органами:',
+    text: '250 мм'
+  },
+  {
+    icon: 'img/icons.svg#sort',
+    title: 'Расстояние между рядами:',
+    text: '1000 мм'
+  },
+  {
+    icon: 'img/icons.svg#widget',
+    title: 'Количество рабочих органов:',
+    text: '20 - 64 шт.'
+  },
+  {
+    icon: 'img/icons.svg#setting',
+    title: 'Стойка:',
+    text: 'рессорная (Bellota / SKR), 90*14 мм'
+  },
+  {
+    icon: 'img/icons.svg#setting',
+    title: 'Рама:',
+    text: 'ст. 09Г2с - 100*100*8 мм, вспомогательные элементы 80*80*6 мм'
+  },
+  {
+    icon: 'img/icons.svg#wheel',
+    title: 'Диски:',
+    text: 'Latossa (производство Испания), BORF (производство Индия), повышенной износостойкости (ресурс 7000 га), выполнены из бор содержащей стали, диаметр 610 мм, толщина 6 мм, “крупная ромашка”'
+  },
+  {
+    icon: 'img/icons.svg#setting-min',
+    title: 'Подшипниковый узел:',
+    text: 'необслуживаемый, FKL производство Сербия), срок службы 7000 га'
+  },
+] %>
+
+<% var equipment = [
+  'Два ряда необслуживаемых узлов FKL, установленных на демпферах из высокоточного полимера диаметром 50х220',
+  'Диски диаметром 610 мм, установленные на расстоянии 250 мм друг от друга',
+  'Механизм компенсации износа дисков (сдвиг ряда)',
+  'Механизм параллельного подъема с наборными шайбами (для удобного регулирования глубины обработки почвы)',
+  'Система синхронизации подъема и опускания левого и правого крыла',
+  'Транспортные колеса 500/50',
+  'Опорные колёса крыльев с регулировкой глубины',
+  'Боковые отражатели почвы'
+] %>
+
+<% var additionally = [
+  'Тандемный шлейф-каток 9планчато-прямой и трубчатый), маятникого типа',
+  'Светооборудование',
+  'Гидравлическая система подъема шлейф-катка',
+  'Успокоитель (за первым рядом рабочих органов)'
+] %>
+
+<section class="catalog container bg-grey overflow-hidden" id="catalog">
+  <div class="flex flex-col gap-6 sm:gap-12 xl:gap-20">
+    <% for (var i = 0; i < 4; i++) { %>
+    <div>
+      <div class="card-top px-4 lg:px-10 -mb-5">
+        <h2 class="font-alt font-semibold text-26 lg:text-32 leading-1">
+          <span class="opacity-60">Серия</span> KRONOS
+        </h2>
+      </div>
+      <div class="card lg:overflow-visible pt-2 lg:pt-10 pb-6">
+        <div class="catalog-slider relative px-2 lg:px-6 mb-6 lg:mb-12">
+          <div class="swiper px-2 lg:px-6 -mx-2 lg:-mx-6">
+            <div class="swiper-wrapper">
+              <% for (var j = 0; j < 4; j++) { %>
+              <a class="swiper-slide pack pack-rect-md bg-grey rounded-4" data-fancybox="video" href="https://www.youtube.com/watch?v=kfs3KyIkKW8">
+                <div class="loader">
+                  <span class="loader-progress">
+                    <svg class="loader-icon icon">
+                      <use xlink:href="img/icons.svg#loader">
+                    </svg>
+                  </span>
+                </div>
+                <picture>
+                  <source srcset="img/pictures/series.webp" type="image/webp">
+                  <img class="image image-rise" loading="lazy" src="img/pictures/series.jpg" alt="">
+                </picture>
+                <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
+                  <button class="btn btn-primary rounded-max border-2 border-solid border-primary border-opacity-60 pointer-events-auto w-16 sm:w-24 h-16 sm:h-24" data-waved="light">
+                    <svg class="icon text-white text-24 sm:text-34">
+                      <use xlink:href="img/icons.svg#play">
+                    </svg>
+                  </button>
+                </div>
+              </a>
+              <% } %>
+            </div>
+          </div>
+          <button class="swiper-button-prev btn btn-black btn-light hidden lg:flex absolute -left-7 xl:-left-12 rounded-max shadow-xl w-14 h-14" data-waved="dark">
+            <svg class="icon text-18">
+              <use xlink:href="img/icons.svg#arrow-left">
+            </svg>
+          </button>
+          <button class="swiper-button-next btn btn-black btn-light hidden lg:flex absolute -right-7 xl:-right-12 rounded-max shadow-xl w-14 h-14" data-waved="dark">
+            <svg class="icon text-18">
+              <use xlink:href="img/icons.svg#arrow-right">
+            </svg>
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="border-b border-solid border-gray pb-6 px-4 md:px-6 xl:px-12 mb-6">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-11">
+              <div class="w-full xl:max-w-[475px]">
+                <h4 class="font-alt font-semibold text-24 leading-2 mb-6 sm:mb-8">Характеристика</h4>
+                <div class="flex items-center justify-center bg-blue bg-opacity-20 rounded-full w-full max-w-[435px] h-14 sm:h-10 px-5 mb-5">
+                  <p class="font-medium text-blue-dark text-14 sm:text-16 leading-2">Агрегатируются с тракторами от 80 до 400 л.с.</p>
+                </div>
+                <div class="flex flex-col gap-2 sm:gap-3">
+                  <% for (var j = 0; j < specifications.length; j++) { %>
+                  <div class="flex">
+                    <svg class="icon text-18 sm:text-20 opacity-50 mr-1 sm:mr-2">
+                      <use xlink:href="<%= specifications[j].icon %>">
+                    </svg>
+                    <p class="font-normal text-12 sm:text-14 lg:text-16 leading-4">
+                      <span class="font-semibold"><%= specifications[j].title %></span> <%= specifications[j].text %>
+                    </p>
+                  </div>
+                  <% } %>
+                </div>
+              </div>
+              <div class="w-full xl:max-w-[595px]">
+                <h4 class="font-alt font-semibold text-24 leading-2 mb-6 sm:mb-8">Описание</h4>
+                <div class="flex flex-wrap items-center gap-2 sm:gap-4 mb-6">
+                  <div class="flex items-center justify-center bg-grey rounded-full h-10 px-5">
+                    <picture>
+                      <source srcset="img/pictures/timer.webp" type="image/webp">
+                      <img class="icon text-20 mr-2" src="img/pictures/timer.png" alt="">
+                    </picture>
+                    <p class="font-medium text-14 sm:text-16 leading-2">Высокая скорость работы</p>
+                  </div>
+                  <div class="flex items-center justify-center bg-grey rounded-full h-10 px-5">
+                    <picture>
+                      <source srcset="img/pictures/ruler.webp" type="image/webp">
+                      <img class="icon text-20 mr-2" src="img/pictures/ruler.png" alt="">
+                    </picture>
+                    <p class="font-medium text-14 sm:text-16 leading-2">Уникальный угол атаки</p>
+                  </div>
+                </div>
+                <p class="font-normal text-14 lg:text-16 leading-5">
+                  Лущильники дисковые на «Эластомерах» серии «KRONOS» - отец земледелия. Орудия производятся в навесном и прицепном вариантах. Агрегаты выполнены на уровне «Европейского качества». Предназначены для поверхностной обработки почвы, измельчения и заделки пожнивных остатков в почву. Разделки зяби и полупара, уничтожения сорняков и растительности. Рыхления почвы на глубину до 15 см. с одновременным прикатыванием поверхностного слоя. Лущение данным агрегатом...
+                </p>
+              </div>
+            </div>
+            <div class="catalog__accordion mt-8" data-accordion="hidden">
+              <div data-accordion-content>
+                <div class="pb-8">
+                  <h4 class="font-alt font-semibold text-24 leading-2 mb-6 sm:mb-8">Стандартная комплектация</h4>
+                  <ul class="list-disc list-inside mb-10">
+                    <% for (var j = 0; j < equipment.length; j++) { %>
+                    <li class="font-normal text-black text-opacity-80 text-14 lg:text-16 leading-4"><%= equipment[j] %></li>
+                    <% } %>
+                  </ul>
+                  <h4 class="font-alt font-semibold text-24 leading-2 mb-6 sm:mb-8">Дополнительно</h4>
+                  <ul class="list-disc list-inside">
+                    <% for (var j = 0; j < additionally.length; j++) { %>
+                    <li class="font-normal text-black text-opacity-80 text-14 lg:text-16 leading-4"><%= additionally[j] %></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+              <button class="btn btn-gray" data-accordion-toggle data-waved="dark">
+                <div class="flex items-center justify-center bg-primary rounded-1 w-4 h-4 mr-2">
+                  <svg class="catalog__arrow icon text-white text-8 duration-3">
+                    <use xlink:href="img/icons.svg#arrow-right">
+                  </svg>
+                </div>
+                <p class="catalog__text font-semibold text-black text-opacity-60 text-14 sm:text-16 leading-1 border-b sm:border-b-2 border-dashed border-black border-opacity-60">
+                  <span>Показать больше информации</span>
+                  <span>Скрыть информацию</span>
+                </p>
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row sm:items-start lg:items-center lg:justify-between gap-4 px-4 md:px-6 xl:px-12">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <button class="btn btn-primary btn-lg btn-fill btn-gradient text-14 sm:text-16" data-waved="dark">Узнать больше о серии</button>
+              <button class="btn btn-primary btn-lg btn-contur" data-waved="dark">
+                <svg class="icon text-24 mr-2">
+                  <use xlink:href="img/icons.svg#doc">
+                </svg>
+                <span class="text-black text-14 sm:text-16">Каталог с ценами</span>
+              </button>
+            </div>
+            <button class="btn btn-primary" data-waved="dark">
+              <svg class="icon text-24 mr-1">
+                <use xlink:href="img/icons.svg#play-circle">
+              </svg>
+              <span class="text-black text-14 sm:text-16">Онлайн презентация</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Отзывы -->
+
+<section class="reviews container flex flex-col gap-10 lg:gap-16 overflow-hidden" id="reviews">
+  <% for (var i = 0; i < 2; i++) { %>
+  <div>
+    <h2 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-6 md:mb-10">Видео-отзывы о нашей технике</h2>
+    <div class="reviews-slider relative">
+      <div class="swiper px-[15px] sm:px-0 -mx-[15px] sm:mx-0">
+        <div class="swiper-wrapper">
+          <% for (var j = 0; j < 4; j++) { %>
+          <div class="swiper-slide h-auto">
+            <a class="pack pack-rect-md sm:pack-rect-sm bg-grey rounded-4 mb-4 sm:mb-5" data-fancybox="video" href="https://www.youtube.com/watch?v=kfs3KyIkKW8">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/series.webp" type="image/webp">
+                <img class="image image-rise" loading="lazy" src="img/pictures/series.jpg" alt="">
+              </picture>
+              <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
+                <button class="btn btn-primary rounded-max border-2 border-solid border-primary border-opacity-60 pointer-events-auto w-16 sm:w-24 h-16 sm:h-24" data-waved="light">
+                  <svg class="icon text-white text-24 sm:text-34">
+                    <use xlink:href="img/icons.svg#play">
+                  </svg>
+                </button>
+              </div>
+            </a>
+            <p class="font-normal text-16 leading-4">Отзыв о лущильнике KRONOS 2000</p>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <button class="swiper-button-prev btn btn-black btn-light hidden lg:flex absolute -left-7 xl:-left-12 rounded-max shadow-xl w-14 h-14" data-waved="dark">
+        <svg class="icon text-18">
+          <use xlink:href="img/icons.svg#arrow-left">
+        </svg>
+      </button>
+      <button class="swiper-button-next btn btn-black btn-light hidden lg:flex absolute -right-7 xl:-right-12 rounded-max shadow-xl w-14 h-14" data-waved="dark">
+        <svg class="icon text-18">
+          <use xlink:href="img/icons.svg#arrow-right">
+        </svg>
+      </button>
+    </div>
+  </div>
+  <% } %>
+</section>
+
+<!-- О нас -->
+
+<section class="about container bg-grey" id="about">
+  <h2 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-8 md:mb-10">РесурсАгроСтрой - навстречу достижениям</h2>
+  <div class="flex justify-between gap-5">
+    <div class="w-full max-w-[510px]">
+      <div class="card h-full py-10 px-8">
+        <div class="card-content">
+          <h3 class="font-alt font-semibold text-24 leading-2 mb-6 lg:md-10">О нашей компании</h3>
+          <p class="font-normal text-16 leading-5 mb-5">
+            Компания ООО «РАС» является производителем почвообрабатывающей техники, которая занимает уверенные позиции в Южном Федеральном округе, а также известна и узнаваема в Центральном, Северо-западном и Приволжском Федеральных округах, пользуется авторитетом и доверием своих партнеров.
+          </p>
+          <p class="font-normal text-16 leading-5">
+            Предприятие оснащено оборудованием широкого спектра, позволяющим качественно выполнять работы любой сложности металлоконструкций и отдельных элементов.
+          </p>
+          <div class="border-b border-dashed border-gray my-14"></div>
+          <h3 class="font-alt font-semibold text-24 leading-2 mb-6 lg:md-10">Наша техника сертифицирована</h3>
+          <div class="flex items-center gap-4 mb-10">
+            <% for (var i = 0; i < 2; i++) { %>
+            <a class="block relative bg-grey w-full max-w-[110px] sm:max-w-[140px]" data-fancybox="awards" href="img/pictures/reward.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/reward.webp" type="image/webp">
+                <img class="block relative w-full" loading="lazy" src="img/pictures/reward.jpg" alt="">
+              </picture>
+            </a>
+            <% } %>
+          </div>
+          <button class="btn btn-primary btn-lg btn-fill btn-gradient w-full sm:max-w-[250px]" data-waved="dark">Узнать больше</button>
+        </div>
+      </div>
+    </div>
+    <div class="w-full max-w-[710px]">
+      <div class=""></div>
+    </div>
+  </div>
+</section>
 
 <%= require('./includes/footer.html').default %>

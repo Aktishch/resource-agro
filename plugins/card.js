@@ -10,20 +10,33 @@ module.exports = plugin(({ addComponents, theme }) => {
       flexDirection: 'column',
       position: 'relative',
       backgroundColor: theme('colors.white.DEFAULT'),
-      boxShadow: `8px 8px 4px ${formatColor({ mode: 'rgba', color: shadow, alpha: 0.2 })}`,
       borderRadius: '16px',
-      transition: 'box-shadow 0.2s ease, transform 0.2s ease',
       overflow: 'hidden',
 
-      '&--active': {
-        '&:active': {
-          transform: 'translateY(4px)',
+      '&-top': {
+        '--size': '78px',
+        display: 'flex',
+        alignItems: 'center',
+        position: 'relative',
+        backgroundColor: theme('colors.white.DEFAULT'),
+        borderRadius: '16px 0 0 16px',
+        width: '100%',
+        maxWidth: '230px',
+        height: 'var(--size)',
+
+        [`@media (min-width: ${theme('screens.lg')})`]: {
+          '--size': '86px',
+          maxWidth: '450px',
         },
 
-        '@media (hover)': {
-          '&:hover': {
-            boxShadow: `8px 8px 4px ${formatColor({ mode: 'rgba', color: shadow, alpha: 0.4 })}`,
-          },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: '0',
+          bottom: '0',
+          left: '100%',
+          borderRight: 'var(--size) solid transparent',
+          borderBottom: `var(--size) solid ${theme('colors.white.DEFAULT')}`,
         },
       },
 
