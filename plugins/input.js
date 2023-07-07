@@ -49,7 +49,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '&--error': {
-        borderColor: theme('colors.purple.DEFAULT'),
+        borderColor: theme('colors.red.DEFAULT'),
       },
 
       '&:-webkit-autofill': {

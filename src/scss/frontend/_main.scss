@@ -83,3 +83,17 @@
     }
   }
 }
+
+// О нас
+.about {
+  &__card {
+    background-image: linear-gradient(180deg, rgba(28, 28, 28, 0) 31.34%, rgba(28, 28, 28, 0.2) 100%);
+  }
+}
+
+// Галерея
+.gallery {
+  &__card {
+    background-image: linear-gradient(180deg, rgba(28, 28, 28, 0) 31.34%, rgba(28, 28, 28, 0.2) 100%);
+  }
+}

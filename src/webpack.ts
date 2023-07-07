@@ -14,12 +14,12 @@ import scrollTo from './ts/scroll-to'
 // import draggable from './ts/draggable'
 // import theme from './ts/theme'
 // import snowflakes from './ts/snowflakes'
-// import animation from './ts/animation'
+import animation from './ts/animation'
 import waved from './ts/waved'
 // import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
 // import inverted from './ts/inverted'
-// import listing from './ts/listing'
+import listing from './ts/listing'
 import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 // import parallax from './ts/parallax'
@@ -68,12 +68,12 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   // draggable.init()
   // theme.init()
   // snowflakes.init()
-  // animation.init()
+  animation.init()
   waved.init()
   // movement.init()
   // bubbles.init()
   // inverted.init()
-  // listing.init()
+  listing.init()
   accordion.init()
   // formatBg.init()
   // parallax.init()
