@@ -173,6 +173,7 @@ module.exports = {
         8: '0.8s',
         9: '0.9s',
         10: '1s',
+        11: '1.1s',
       },
 
       transitionDelay: {
@@ -186,6 +187,7 @@ module.exports = {
         8: '0.8s',
         9: '0.9s',
         10: '1s',
+        11: '1.1s',
       },
 
       zIndex: {

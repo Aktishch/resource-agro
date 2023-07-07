@@ -70,27 +70,4 @@ const preloader = (): void => {
   )
 }
 
-const warning = (): void => {
-  window.Fancybox.show(
-    [
-      {
-        src: './dialogs/dialog-warning.html',
-        type: 'ajax',
-      },
-    ],
-
-    {
-      dragToClose: false,
-      closeButton: false,
-      backdropClick: true,
-
-      on: {
-        done: (): void => {
-          waved.init()
-        },
-      },
-    }
-  )
-}
-
-export default { init, open, close, preloader, warning }
+export default { init, open, close, preloader }

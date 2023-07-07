@@ -1,4 +1,5 @@
 import ymaps from 'ymaps'
+import media from './functions/media'
 
 declare global {
   interface maps {
@@ -16,13 +17,16 @@ const init = (): void => {
   ymaps
     .load('https://api-maps.yandex.ru/2.1/?lang=ru_RU')
     .then((maps: maps): void => {
-      const center: number[] = [45.03191007458623, 38.921171499999936]
-      const mark: number[] = [45.03191007458623, 38.921171499999936]
+      const center: number[] =
+        window.screen.width > media.md
+          ? [45.23580646689777, 38.951859494689955]
+          : [45.23595807459896, 38.95439150000002]
+      const mark: number[] = [45.23595807459896, 38.95439150000002]
       const inputs: Element[] = [...document.querySelectorAll('[data-suggest-view]')]
 
       const map = new maps.Map(yandexMap, {
         center: center,
-        zoom: 16,
+        zoom: 17,
       })
 
       const placemark = new maps.Placemark(
@@ -31,8 +35,8 @@ const init = (): void => {
         {
           iconLayout: 'default#image',
           iconImageHref: './img/pictures/geo.png',
-          iconImageSize: [40, 50],
-          iconImageOffset: [-20, -25],
+          iconImageSize: [74, 84],
+          iconImageOffset: [-37, -42],
         }
       )
 
@@ -48,7 +52,6 @@ const init = (): void => {
       map.controls.remove('trafficControl')
       map.controls.remove('typeSelector')
       map.controls.remove('fullscreenControl')
-      map.controls.remove('zoomControl')
       map.controls.remove('rulerControl')
       map.behaviors.disable(['scrollZoom'])
       map.geoObjects.add(placemark)

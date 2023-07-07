@@ -1,26 +1,3 @@
-const phoneMask = (event: Event): void => {
-  const input = event.target as HTMLInputElement
-  const matrix = '+7 (___) ___-__-__'
-  const replace: string = matrix.replace(/\D/g, '')
-
-  let values: string = input.value.replace(/\D/g, '')
-  let length = 0
-
-  if (replace.length >= values.length) values = replace
-
-  input.value = matrix.replace(/./g, (value: string): string => {
-    return /[_\d]/.test(value) && length < values.length
-      ? values.charAt(length++)
-      : length >= values.length
-        ? ''
-        : value
-  })
-
-  input.addEventListener('blur', ((): void => {
-    if (input.value.length == 2) input.value = ''
-  }) as EventListener)
-}
-
 const getValue = (input: HTMLInputElement): string => {
   return input.value.replace(/\D/g, '')
 }

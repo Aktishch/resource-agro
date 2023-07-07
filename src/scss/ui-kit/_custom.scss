@@ -14,7 +14,11 @@
   }
 
   &-custom &__content>.f-button.is-close-btn {
-    @apply top-2 right-2 bg-white text-black rounded-max shadow-md;
+    @apply top-0 right-0 bg-transparent text-black;
+
+    @screen md {
+      @apply top-1 right-1 bg-white rounded-max shadow-md;
+    }
   }
 }
 
@@ -41,9 +45,4 @@
       }
     }
   }
-}
-
-// Air-datepicker
-#air-datepicker-global-container {
-  z-index: 1100;
 }

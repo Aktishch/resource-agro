@@ -614,7 +614,101 @@
 
 <!-- Карта -->
 
+<% var map = [
+  {
+    top: 'top-[95px] md:top-[160px]',
+    left: 'left-[30px] md:left-10 xl:left-[64px]',
+    max: 'max-w-[80px] xl:max-w-[115px]',
+    delay: ''
+  },
+  {
+    top: 'top-[270px] md:top-[340px]',
+    left: 'left-[95px] xl:left-[154px]',
+    max: 'max-w-[100px] xl:max-w-[140px]',
+    delay: 'delay-1'
+  },
+  {
+    top: 'top-[125px] md:top-[240px]',
+    left: 'left-[175px] xl:left-[306px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-2'
+  },
+  {
+    top: 'top-[250px] sm:top-[360px]',
+    left: 'left-[215px] md:left-[250px] xl:left-[400px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-3'
+  },
+  {
+    top: 'top-[210px] lg:top-[270px]',
+    left: 'left-[380px] xl:left-[590px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-4'
+  },
+  {
+    top: 'top-[300px] md:top-[410px]',
+    left: 'left-[400px] md:left-[450px] xl:left-[750px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-5'
+  },
+  {
+    top: 'top-[250px] md:top-[368px]',
+    left: 'left-[500px] md:left-[600px] xl:left-[1000px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-6'
+  },
+  {
+    top: 'top-[480px] xl:top-[544px]',
+    left: 'left-[650px] xl:left-[1165px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-7'
+  },
+  {
+    top: 'top-[160px] xl:top-[100px]',
+    left: 'left-[600px] md:left-[720px] xl:left-[1376px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-8'
+  },
+  {
+    top: 'top-[225px]',
+    left: 'left-[800px] xl:left-[1520px]',
+    max: 'max-w-[60px] xl:max-w-[84px]',
+    delay: 'delay-9'
+  },
+  {
+    top: 'top-[430px]',
+    left: 'left-[1000px] lg:left-[880px] xl:left-[1600px]',
+    max: 'max-w-[80px] xl:max-w-[115px]',
+    delay: 'delay-10'
+  },
+  {
+    top: 'top-[130px]',
+    left: 'left-[930px] xl:left-[1745px]',
+    max: 'max-w-[80px] xl:max-w-[115px]',
+    delay: 'delay-11'
+  }
+] %>
+
 <section class="map container relative overflow-hidden">
+  <div class="absolute inset-0 w-[1920px] mx-auto">
+    <% for (var i = 0; i < map.length; i++) { %>
+    <div class="absolute <%= map[i].top %> <%= map[i].left %> bg-white rounded-4 shadow-md w-full <%= map[i].max %> p-0.5 xl:p-1 ease-linear duration-4 <%= map[i].delay %> anim anim--left" data-anim="hidden">
+      <div class="pack pack-box bg-grey rounded-4">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/series.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/series.jpg" alt="">
+        </picture>
+      </div>
+    </div>
+    <% } %>
+  </div>
   <h2 class="font-alt font-semibold text-center text-26 lg:text-32 leading-1 ease-in anim anim--up" data-anim="hidden">Работаем по всей России!</h2>
   <img class="block w-full min-w-[660px] max-w-[1080px] mx-auto" src="img/pictures/map.svg" alt="">
 </section>

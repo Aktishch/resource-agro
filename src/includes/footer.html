@@ -1,31 +1,83 @@
-<!-- Карта -->
+<!-- Контакты -->
 
-<!-- <section class="container container--distance relative bg-grey dark:bg-dark overflow-hidden h-96">
-  <div class="loader">
-    <span class="loader-progress">
-      <svg class="loader-icon icon">
-        <use xlink:href="img/icons.svg#loader">
-      </svg>
-    </span>
+<section class="container relative overflow-hidden py-8 md:py-14" id="contacts">
+  <div class="relative md:absolute inset-0 bg-grey h-[425px] md:h-auto mb-8 md:mb-0 -mx-[15px] md:mx-0">
+    <div class="loader">
+      <span class="loader-progress">
+        <svg class="loader-icon icon">
+          <use xlink:href="img/icons.svg#loader">
+        </svg>
+      </span>
+    </div>
+    <div class="absolute inset-0 overflow-hidden" id="yandex-map"></div>
   </div>
-  <div class="absolute inset-0 overflow-hidden" id="yandex-map"></div>
-</section> -->
+  <div class="ease-in anim anim--right" data-anim="hidden">
+    <div class="card rounded-none md:rounded-4 md:shadow-md w-full md:max-w-[340px] md:p-10">
+      <div class="card-content">
+        <h2 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-8 md:mb-10">Контакты</h2>
+        <div class="flex flex-col gap-6 sm:gap-9 mb-8 sm:mb-11">
+          <div class="flex">
+            <div class="flex items-center justify-center bg-grey rounded-4 w-10 min-w-[40px] h-10 mr-4">
+              <svg class="icon text-primary text-18">
+                <use xlink:href="img/icons.svg#geo">
+              </svg>
+            </div>
+            <div class="flex flex-col items-start">
+              <h4 class="font-alt font-semibold text-16 leading-1 mb-1">Адрес</h4>
+              <p class="font-normal text-14 sm:text-16 leading-1">ст. Новотитаровская, <br> ул. Калинина, д. 12/1</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center justify-center bg-grey rounded-4 w-10 min-w-[40px] h-10 mr-4">
+              <svg class="icon text-primary text-18">
+                <use xlink:href="img/icons.svg#mobile">
+              </svg>
+            </div>
+            <div class="flex flex-col items-start">
+              <h4 class="font-alt font-semibold text-16 leading-1 mb-1">Телефон</h4>
+              <a class="btn btn-gray font-normal text-black text-14 sm:text-16 leading-1" data-waved="dark" href="tel: 8 800 100 45 92">8 800 100 45 92</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="flex items-center justify-center bg-grey rounded-4 w-10 min-w-[40px] h-10 mr-4">
+              <svg class="icon text-primary text-18">
+                <use xlink:href="img/icons.svg#email">
+              </svg>
+            </div>
+            <div class="flex flex-col items-start">
+              <h4 class="font-alt font-semibold text-16 leading-1 mb-1">E-mail</h4>
+              <a class="btn btn-gray font-normal text-black text-14 sm:text-16 leading-1" data-waved="dark" href="mailto: mail@resurs-agro.ru">mail@resurs-agro.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <a class="btn btn-gray rounded-max" data-waved="light" href="" target="_blank">
+            <img class="icon text-42" src="img/pictures/tg.svg" alt="">
+          </a>
+          <a class="btn btn-gray rounded-3" data-waved="light" href="" target="_blank">
+            <img class="icon text-42" src="img/pictures/wa.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Подвал -->
 
-<!-- <footer class="container flex flex-wrap flex-col md:flex-row items-center justify-between gap-4 bg-black text-second pt-4 pb-10 md:pb-4" id="footer">
-  <a class="btn btn-white w-36" data-waved="light" href="/">
+<footer class="container flex items-center justify-between gap-4 py-2 md:py-3">
+  <a class="btn btn-gray" data-waved="dark" href="/">
     <picture>
       <source srcset="img/pictures/logo.webp" type="image/webp">
-      <img class="w-full" src="img/pictures/logo.png" alt="">
+      <img class="w-11 md:w-[60px]" src="img/pictures/logo.png" alt="">
     </picture>
+    <div class="flex flex-col ml-3">
+      <span class="font-alt font-bold text-black text-14 md:text-16 leading-1">РесурсАгроСтрой</span>
+      <span class="font-normal text-black text-opacity-60 text-8 md:text-12 leading-1 mt-1">Производитель почвообрабатывающей техники</span>
+    </div>
   </a>
-  <address class="text-center text-16 leading-4">​Рождественская набережная, <br> 45/1​5 офис; 3 этаж</address>
-  <span class="btn btn-second text-18 w-max p-1" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Privacy policy</span>
-  <span class="text-18">
-    Разработка: <a class="underline w-max" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
-  </span>
-</footer> -->
+  <span class="font-normal text-14 md:text-16 leading-1">©2023</span>
+</footer>
 
 </body>
 

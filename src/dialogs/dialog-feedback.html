@@ -1,0 +1,48 @@
+<dialog class="dialog dialog-lg rounded-4 py-7 sm:py-12 lg:py-4 px-4 sm:px-12 lg:px-4">
+  <div class="flex items-center justify-between gap-5">
+    <div class="hidden lg:block w-full max-w-[470px]">
+      <div class="pack pack-[115] bg-grey rounded-4">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/feedback.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/feedback.jpg" alt="">
+        </picture>
+      </div>
+    </div>
+    <div class="w-full lg:max-w-[450px] lg:px-4">
+      <h2 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-4">Хотите узнать подробнее?</h2>
+      <p class="font-normal text-14 sm:text-16 leading-4 opacity-80 mb-5 md:mb-10">Отправьте заявку, мы сами перезвоним вам и расскажем все детали</p>
+      <form class="form w-full sm:max-w-[400px] lg:max-w-full mb-5 md:mb-8" data-form="submit">
+        <input type="hidden" value="Хотите узнать подробнее?" name="theme">
+        <label class="form-label mb-5" data-label="input">
+          <span class="font-medium text-14 sm:text-16 mb-2">Ваше имя</span>
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input input-gray input-lg" data-input="name" type="text" name="name">
+            </div>
+            <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+          </div>
+        </label>
+        <label class="form-label mb-6 md:mb-9" data-label="input">
+          <span class="font-medium text-14 sm:text-16 mb-2">Ваш телефон</span>
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input input-gray input-lg" data-input="tel" type="tel" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" name="tel">
+            </div>
+            <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+          </div>
+        </label>
+        <button class="btn btn-primary btn-lg btn-fill btn-gradient sm:w-max" data-waved="dark" type="submit">Отправить заявку</button>
+      </form>
+      <div class="hover:underline underline-offset-4 font-normal text-12 sm:text-14 leading-2 opacity-60 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+        Отправляя форму Вы даете согласие на обработку <br> Ваших персональных данных
+      </div>
+    </div>
+  </div>
+</dialog>
