@@ -57,7 +57,7 @@ const preloader = (): void => {
   window.Fancybox.show(
     [
       {
-        src: './dialogs/dialog-preloader.html',
+        src: './dialogs/dialog-preloader.php',
         type: 'ajax',
       },
     ],

@@ -27,7 +27,7 @@ const formSubmit = (event: Event): void => {
       .then((response: any): void => {
         fancybox.close()
 
-        fancybox.open('./dialogs/dialog-submit.html')
+        fancybox.open('./dialogs/dialog-submit.php')
 
         form.reset()
 

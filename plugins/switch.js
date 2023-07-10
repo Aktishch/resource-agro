@@ -59,10 +59,11 @@ module.exports = plugin(({ addComponents, theme }) => {
       },
 
       '&--radio': {
-        minWidth: '20px',
-        width: '20px',
-        height: '20px',
+        minWidth: '24px',
+        width: '24px',
+        height: '24px',
         borderRadius: '50%',
+        backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 18.23%, rgba(0, 0, 0, 0.1) 100%)',
 
         '&::after': {
           content: '""',

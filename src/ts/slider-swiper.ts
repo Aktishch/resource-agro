@@ -1,6 +1,6 @@
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs } from 'swiper'
 import media from './functions/media'
-// import quiz from './quiz'
+import quiz from './quiz'
 
 declare global {
   interface Window {
@@ -81,30 +81,30 @@ const init = (): void => {
     }) as Swiper
   })
 
-  // new window.Swiper('.quiz-slider .swiper', {
-  //   navigation: {
-  //     prevEl: '.quiz-slider .swiper-button-prev',
-  //     nextEl: '.quiz-slider .swiper-button-next',
-  //   },
+  new window.Swiper('.quiz-slider .swiper', {
+    navigation: {
+      prevEl: '.quiz-slider .swiper-button-prev',
+      nextEl: '.quiz-slider .swiper-button-next',
+    },
 
-  //   slidesPerView: 1,
-  //   slidesPerGroup: 1,
-  //   spaceBetween: 30,
-  //   allowTouchMove: false,
-  //   watchSlidesProgress: true,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    allowTouchMove: false,
+    watchSlidesProgress: true,
 
-  //   on: {
-  //     slideChange: (swiper: Swiper): void => {
-  //       quiz.checkQuizSlide(swiper.visibleSlides[0])
+    on: {
+      slideChange: (swiper: Swiper): void => {
+        quiz.checkQuizSlide(swiper.visibleSlides[0])
 
-  //       if (swiper.visibleSlides[0] == swiper.slides[swiper.slides.length - 1]) {
-  //         swiper.el.closest('[data-quiz]').setAttribute('data-quiz-end', '')
-  //       } else {
-  //         swiper.el.closest('[data-quiz]').removeAttribute('data-quiz-end')
-  //       }
-  //     },
-  //   },
-  // }) as Swiper
+        if (swiper.visibleSlides[0] == swiper.slides[swiper.slides.length - 1]) {
+          swiper.el.closest('[data-quiz]').setAttribute('data-quiz-end', '')
+        } else {
+          swiper.el.closest('[data-quiz]').removeAttribute('data-quiz-end')
+        }
+      },
+    },
+  }) as Swiper
 }
 
 export default { init }

@@ -97,3 +97,18 @@
     background-image: linear-gradient(180deg, rgba(28, 28, 28, 0) 31.34%, rgba(28, 28, 28, 0.2) 100%);
   }
 }
+
+// Квиз
+.quiz {
+  background-image: linear-gradient(180deg, rgba(202, 110, 28, 0) 51.14%, #BE681B 96.97%);
+
+  &-slider {
+    &[data-quiz="stop"] .swiper-button-next {
+      @apply opacity-50 pointer-events-none;
+    }
+
+    &[data-quiz-end] &-submit {
+      @apply flex;
+    }
+  }
+}

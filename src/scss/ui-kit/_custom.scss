@@ -41,7 +41,7 @@
       }
 
       &.swiper-button-disabled {
-        @apply invisible opacity-0;
+        @apply hidden;
       }
     }
   }

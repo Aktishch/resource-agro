@@ -68,7 +68,10 @@
   <div class="sm:hidden absolute z-1 -bottom-20 left-0 right-0 bg-primary bg-opacity-20 blur-2xl pointer-events-none w-56 h-56 mx-auto"></div>
   <div class="flex flex-col relative z-1 text-white">
     <div class="flex items-center mb-6 sm:mb-9 xl:mb-16 ease-in anim anim--up" data-anim="hidden">
-      <img class="icon text-26 lg:text-32 mr-2" src="img/pictures/check.svg" alt="">
+      <picture>
+        <source srcset="img/pictures/check.webp" type="image/webp">
+        <img class="icon text-26 lg:text-32 mr-2" loading="lazy" src="img/pictures/check.png" alt="">
+      </picture>
       <h3 class="font-alt font-semibold text-14 sm:text-16 lg:text-18 leading-2">
         <span class="text-primary">Качество,</span> проверенное временем
       </h3>
@@ -609,6 +612,103 @@
   </div>
   <div class="ease-in anim anim--up" data-anim="hidden">
     <button class="btn btn-primary btn-lg btn-contur btn-swipe text-black text-14 sm:text-16 w-full sm:w-auto mt-8 sm:mt-10 mx-auto" data-listing-show data-waved="dark">Показать больше фото</button>
+  </div>
+</section>
+
+<!-- Квиз -->
+
+<section class="quiz container relative bg-primary overflow-hidden">
+  <div class="absolute inset-0">
+    <img class="block absolute -top-20 -right-20 lg:right-44 opacity-40 w-full max-w-[200px] sm:max-w-[300px]" src="img/pictures/leaves.svg" alt="">
+    <img class="hidden lg:block absolute -bottom-20 lg:left-44 opacity-40 -scale-x-100 w-full max-w-[300px]" src="img/pictures/leaves.svg" alt="">
+  </div>
+  <div class="relative ease-in anim anim--up" data-anim="hidden">
+    <div class="card-top xl:max-w-[620px]"></div>
+    <div class="card flex-row items-center justify-between gap-4 -mt-14 xl:p-4">
+      <div class="pack pack-box hidden xl:block bg-grey rounded-4 w-full max-w-[490px]">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/quiz.webp" type="image/webp">
+          <img class="image" loading="lazy" src="img/pictures/quiz.jpg" alt="">
+        </picture>
+      </div>
+      <div class="card-content w-full xl:max-w-[740px] py-7 xl:py-0">
+        <div class="flex items-center mb-5 px-4 md:px-7">
+          <picture>
+            <source srcset="img/pictures/chat.webp" type="image/webp">
+            <img class="icon text-24 mr-4 sm:mr-2" loading="lazy" src="img/pictures/chat.png" alt="">
+          </picture>
+          <p class="font-normal text-14 sm:text-16 leading-4 opacity-80">Ответьте на несколько вопросов и получите консультацию бесплатно</p>
+        </div>
+        <form class="form" data-form="submit">
+          <input type="hidden" value="Квиз" name="theme">
+          <div class="quiz-slider flex flex-col" data-quiz="stop">
+            <div class="swiper mx-0">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide h-full pb-5 px-4 md:px-7" data-quiz-slide>
+                  <h3 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-8 md:mb-10">Для каких целей вам нужен лущильник?</h3>
+                  <div class="flex flex-col gap-5">
+                    <label class="form-label flex-row items-center cursor-pointer">
+                      <input class="switch switch--radio mr-4 sm:mr-2" type="radio" name="radio">
+                      <span class="font-normal text-14 sm:text-16 leading-4">Скоростная обработка почвы</span>
+                    </label>
+                    <label class="form-label flex-row items-center cursor-pointer">
+                      <input class="switch switch--radio mr-4 sm:mr-2" type="radio" name="radio">
+                      <span class="font-normal text-14 sm:text-16 leading-4">Скоростная обработка почвы</span>
+                    </label>
+                    <label class="form-label flex-row items-center cursor-pointer">
+                      <input class="switch switch--radio mr-4 sm:mr-2" type="radio" name="radio">
+                      <span class="font-normal text-14 sm:text-16 leading-4">Скоростная обработка почвы</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="swiper-slide h-full pb-5 px-4 md:px-7" data-quiz-slide>
+                  <h3 class="font-alt font-semibold text-26 lg:text-32 leading-1 mb-8 md:mb-10">Как с вами связаться?</h3>
+                  <div class="flex flex-col w-full max-w-[370px]">
+                    <label class="form-label mb-5" data-label="input">
+                      <span class="font-medium text-14 sm:text-16 mb-2">Ваше имя</span>
+                      <div class="form-wrapper">
+                        <div class="input-cover">
+                          <input class="input input-gray input-lg" data-input="name" type="text" name="name">
+                        </div>
+                        <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+                      </div>
+                    </label>
+                    <label class="form-label" data-label="input">
+                      <span class="font-medium text-14 sm:text-16 mb-2">Ваш телефон</span>
+                      <div class="form-wrapper">
+                        <div class="input-cover">
+                          <input class="input input-gray input-lg" data-input="tel" type="tel" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" name="tel">
+                        </div>
+                        <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-5 px-4 md:px-7">
+              <button class="swiper-button-prev btn btn-primary btn-lg btn-contur inset-0 w-auto mt-0" data-waved="dark">
+                <svg class="icon text-18">
+                  <use xlink:href="img/icons.svg#arrow-back">
+                </svg>
+                <span class="hidden sm:block text-black ml-2">Назад</span>
+              </button>
+              <button class="swiper-button-next btn btn-primary btn-lg btn-fill btn-gradient inset-0 w-auto mt-0" data-waved="dark">Следующий вопрос</button>
+              <button class="quiz-slider-submit btn btn-primary btn-lg btn-fill hidden" data-waved="dark" type="submit">
+                Отправить <span class="hidden sm:block ml-1">заявку</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
