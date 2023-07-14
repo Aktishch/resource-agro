@@ -55,9 +55,9 @@
     }
   ] %>
 
-  <nav class="container hidden xl:flex items-center justify-between gap-5 sticky z-4 top-0 left-0 right-0 bg-white py-4">
+  <nav class="container hidden xl:flex items-center justify-between gap-5 sticky z-4 top-0 left-0 right-0 bg-white py-4" data-nav>
     <% for (var i = 0; i < nav.length; i++) { %>
-    <a class="btn btn-gray font-normal text-black text-opacity-60" data-scroll data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
+    <a class="btn btn-gray font-normal text-black text-opacity-60" data-scroll="top" data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
     <% } %>
   </nav>
 
@@ -145,7 +145,7 @@
       </div>
       <div class="flex flex-col items-start gap-10 mb-14">
         <% for (var i = 0; i < nav.length; i++) { %>
-        <a class="btn btn-gray font-medium text-black text-14" data-scroll data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
+        <a class="btn btn-gray font-medium text-black text-14" data-scroll="top" data-waved="dark" href="<%= nav[i].id %>"><%= nav[i].text %></a>
         <% } %>
       </div>
       <div class="mt-auto">

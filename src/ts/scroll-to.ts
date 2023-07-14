@@ -6,12 +6,23 @@ const scrollTo = (event: Event): void => {
   const link = event.target as HTMLAnchorElement
   const id = String(link.getAttribute('href'))
   const block = document.querySelector(id) as HTMLElement
-  const offsetTop: number = block.getBoundingClientRect().top + scrolledPage.init().top
 
-  window.scrollTo({
-    top: offsetTop,
-    behavior: 'smooth',
-  })
+  if (link.dataset.scroll == 'top') {
+    const navHeight: number = (document.querySelector('*[data-nav]') as HTMLElement).offsetHeight
+    const offsetTop: number = block.getBoundingClientRect().top + scrolledPage.init().top - navHeight
+
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth',
+    })
+  }
+
+  if (link.dataset.scroll == 'center') {
+    block.scrollIntoView({
+      block: 'center',
+      behavior: 'smooth',
+    })
+  }
 }
 
 const init = (): void => {
