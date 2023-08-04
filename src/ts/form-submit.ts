@@ -1,6 +1,12 @@
 import fancybox from './fancybox'
 import formValidate from './functions/form-validate'
 
+declare global {
+  interface Window {
+    ym: any
+  }
+}
+
 const formSubmit = (event: Event): void => {
   const form = event.target as HTMLFormElement
 
@@ -25,6 +31,8 @@ const formSubmit = (event: Event): void => {
         return response.text()
       })
       .then((response: any): void => {
+        window.ym(94526343, 'reachGoal', 'zayavka')
+
         fancybox.close()
 
         fancybox.open('./dialogs/dialog-submit.php')
